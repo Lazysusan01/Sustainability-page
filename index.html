@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merck Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center flex-wrap">
+            <img src="CW_logo.png" alt="Company Logo" class="max-h-32 md:max-h-32 lg:max-h-64 my-2">
+        </div>
+        <div class="text-center">
+            <h1 class="text-6xl font-bold py-10">Sustainability</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-10">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <!-- This image will be on the left -->
+                <img src="Climate Change Rating.png" class="max-h-128">
+            </div>
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <!-- These images will be in the right column -->
+                <img src="Climate Change Rating (1).png" class="max-h-44">
+                <img src="Climate Change Rating (2).png" class="max-h-44">
+                <img src="Climate Change Rating (3).png" class="max-h-44">
+                <img src="Climate Change Rating (4).png" class="max-h-44">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+    <!-- <script>
+        function showAdditionalButtons(event) {
+            event.preventDefault(); // Prevent the link from navigating
+            const additionalButtons = document.getElementById('additionalButtons');
+            // Check if the buttons are hidden to apply the animation
+            if (additionalButtons.classList.contains('hidden')) {
+                additionalButtons.classList.remove('hidden', 'opacity-0');
+                setTimeout(() => {
+                    additionalButtons.classList.add('opacity-100');
+                }, 20); // A slight delay to ensure the transition happens
+            } else {
+                additionalButtons.classList.add('hidden');
+                additionalButtons.classList.remove('opacity-100');
+                setTimeout(() => {
+                    additionalButtons.classList.add('opacity-0');
+                }, 20); // Reset to the initial state if clicked again
+            }
+        }
+    </script> -->
+<!-- </body>
+</html> -->
