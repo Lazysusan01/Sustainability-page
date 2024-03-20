@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .circle-button {
+            position: absolute;
+            background-color: transparent; /* Transparent background */
+            width: 125px; /* Button width */
+            height: 125px; /* Button height */
+            border-radius: 50%; /* Make it a circle */
+            text-align: center; /* Center text horizontally */
+            line-height: 40px; /* Center text vertically */
+            cursor: pointer; /* Show pointer cursor on hover */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on border color and box-shadow */
+        }
+        
+        .circle-button:hover { /* Green color on hover */
+            box-shadow: 0 0 10px 0 lightblue; /* Glow effect on hover */
+        }
+        
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center flex-wrap">
+            <img src="CW_logo.png" alt="Company Logo" class="max-h-32 md:max-h-32 lg:max-h-64 my-2">
+        </div>
+        <div class="text-center">
+            <h1 class="text-6xl font-bold py-10">Sustainability</h1>
+        </div>
+        <div class="container mx-auto justify-center relative">
+            <!-- Image -->
+            <img src="Climate Change Rating.png" class="max-h-128" style="width: 50%; height: auto;">
+            <!-- Circular Buttons -->
+            <button onclick="toggleRating('rating1')" class="circle-button top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full border-green-500 hover:border-green-200">1</button>
+            <button onclick="toggleRating('rating2')" class="circle-button top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full border-yellow-500 hover:border-yellow-200">2</button>
+            <button onclick="toggleRating('rating3')" class="circle-button top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full border-orange-500 hover:border-orange-200" style="top: calc(57% - 11px); left: calc(52% - 7px);">3</button>
+            <button onclick="toggleRating('rating4')" class="circle-button top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full border-red-500 hover:border-red-200" style="top: calc(79% - 13px); left: calc(70% - 2px);">4</button>
+        </div>
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <!-- This column is left for additional content -->
+            </div>
+        </div>
+        <!-- Rating Images (Initially Hidden) -->
+        <div id="rating1" class="hidden">
+            <img src="Climate Change Rating (1).png" class="max-h-44">
+        </div>
+        <div id="rating2" class="hidden">
+            <img src="Climate Change Rating (2).png" class="max-h-44">
+        </div>
+        <div id="rating3" class="hidden">
+            <img src="Climate Change Rating (3).png" class="max-h-44">
+        </div>
+        <div id="rating4" class="hidden">
+            <img src="Climate Change Rating (4).png" class="max-h-44">
+        </div>
+    </div>
+    <script>
+        function toggleRating(ratingId) {
+            const ratingElement = document.getElementById(ratingId);
+            if (ratingElement.classList.contains('hidden')) {
+                ratingElement.classList.remove('hidden');
+            } else {
+                ratingElement.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

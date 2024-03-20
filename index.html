@@ -4,7 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sustainability Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .image-container {
+            position: relative;
+            width: 3375px;
+            height:750px
+        }
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .image-container img:first-child {
+            display: block; /* Show the first image by default */
+        }
+        .column {
+            position: absolute;
+            width: 25%; /* Quarter of container to split into 4 columns */
+            height: 100%; /* Full height */
+            top: 0;
+        }
+        /* Positions for each column */
+        .column-1 { left: 0; }
+        .column-2 { left: 25%; }
+        .column-3 { left: 50%; }
+        .column-4 { left: 75%; }
+        
+        .circle-button {
+            position: absolute;
+            background-color: transparent; /* Transparent background */
+            width: 10%; /* Relative size to the image */
+            height: 10%; /* Relative size to the image */
+            border-radius: 50%; /* Make it a circle */
+            text-align: center; /* Center text horizontally */
+            cursor: pointer; /* Show pointer cursor on hover */
+            transition: all 0.3s ease; /* Smooth transition */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1vw; /* Responsive font size */
+        }
+    
+        .circle-button:hover + .rating-image {
+            display: block; /* Show on hover */
+        }
+    
+        .rating-image {
+            display: none; /* Initially hidden */
+            position: absolute;
+            transition: display 0.3s ease;
+            width: 20%; /* Relative width to the image */
+            left: 110%; /* Position to the right of the button */
+        }
+    </style>
+    
 </head>
 <body class="min-h-screen bg-gray-100">
     <div class="container mx-auto px-4">
@@ -12,43 +69,28 @@
             <img src="CW_logo.png" alt="Company Logo" class="max-h-32 md:max-h-32 lg:max-h-64 my-2">
         </div>
         <div class="text-center">
-            <h1 class="text-6xl font-bold py-10">Sustainability</h1>
+            <h1 class="text-6xl font-bold py-5">Sustainability</h1>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 py-10">
-            <div class="flex flex-col items-center md:items-start gap-4">
-                <!-- This image will be on the left -->
-                <img src="Climate Change Rating.png" class="max-h-128">
-            </div>
-            <div class="flex flex-col items-center md:items-start gap-4">
-                <!-- These images will be in the right column -->
-                <img src="Climate Change Rating (1).png" class="max-h-44">
-                <img src="Climate Change Rating (2).png" class="max-h-44">
-                <img src="Climate Change Rating (3).png" class="max-h-44">
-                <img src="Climate Change Rating (4).png" class="max-h-44">
-            </div>
+        <div class="image-container">
+            <!-- Image -->
+            <img src="A.png" id="image1">
+            <img src="B.png" id="image2">
+            <img src="C.png" id="image3">
+            <img src="D.png" id="image4">
+            <div class="column column-1" onmouseover="showImage(1)"></div>
+            <div class="column column-2" onmouseover="showImage(2)"></div>
+            <div class="column column-3" onmouseover="showImage(3)"></div>
+            <div class="column column-4" onmouseover="showImage(4)"></div>
         </div>
-    </div>
-</body>
-</html>
-
-    <!-- <script>
-        function showAdditionalButtons(event) {
-            event.preventDefault(); // Prevent the link from navigating
-            const additionalButtons = document.getElementById('additionalButtons');
-            // Check if the buttons are hidden to apply the animation
-            if (additionalButtons.classList.contains('hidden')) {
-                additionalButtons.classList.remove('hidden', 'opacity-0');
-                setTimeout(() => {
-                    additionalButtons.classList.add('opacity-100');
-                }, 20); // A slight delay to ensure the transition happens
-            } else {
-                additionalButtons.classList.add('hidden');
-                additionalButtons.classList.remove('opacity-100');
-                setTimeout(() => {
-                    additionalButtons.classList.add('opacity-0');
-                }, 20); // Reset to the initial state if clicked again
+        <script>
+            function showImage(index) {
+                // Hide all images first
+                for (let i = 1; i <= 4; i++) {
+                    document.getElementById(`image${i}`).style.display = 'none';
+                }
+                // Show the selected image
+                document.getElementById(`image${index}`).style.display = 'block';
             }
-        }
-    </script> -->
-<!-- </body>
-</html> -->
+        </script>
+    </body>
+    </html>
